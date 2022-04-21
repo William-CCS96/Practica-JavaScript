@@ -1,4 +1,5 @@
 var nombre = "William";
+var alias = "Unic";
 var apellido = "Correa";
 var nombredeUsurarioenPlatzi = "WilliamCCS";
 var edad = 25;
