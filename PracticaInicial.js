@@ -37,11 +37,101 @@ var Argumento = "Son los datos que se introduciran en el parametro y que estaran
 
 const name = "Juan David";
 const lastname = "Castro Gallego";
-const completeName = name + lastname;
+
 const nickname = "juandc";
 
 console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
 
-function quienEres (name,lastname,nickname){
-    console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+const name = "William Camilo";
+const lastname = "Correa Sandoval";
+const nickname = "Unic";
+
+function quienEres(){
+    let completeName = name + lastname;
+    console.log(`Mi nombre es ${completeName}, pero prefiera que me digas ${nickname}.`)
 }
+
+//Usando  arrow function o función flecha =>
+
+const miFuncion = (name, lastName, nickname) => {
+	let fullName = `${name} ${lastName}`;
+	return `Mi nombre es: ${fullName}, pero prefiero que me digas ${nickname}`;
+}
+console.log(miFuncion('Juan David', 'Castro Gallego', 'juandc'));
+
+const quienEres = function(name, lastName, nickname){
+    let fullName = `${name} ${lastName}`;
+    return`Mi nombre es: ${fullName}, pero prefiero que me digan ${nickname}`;
+}
+console.log(quienEres('William', 'Correa', 'Unic'));
+
+// 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+
+    // ¿Qué es una condicional?
+    //¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+    //¿Puedo combinar funciones y condicionales?
+
+    let condicional = "Es una función que valida una condición y ejecuta codigo"
+    let tiposCondicionalesJSDiferencias = {
+        "if.else: Validauna condición y ejecuta un codigo, sino se cumple ejecuta el else",
+        "Else if: funciona como if.else adicionando más condiciones para validra entre ambos condicionales", 
+        "swithc: En casos en donde haya una extensión más larga de casos por  revisar es más eficiente utilziar estacondicional",
+        "Operador ternario: validamos una variables si es verdadera o falsa y nos devuelve una primera opción verdadero o la segunda si es falsa"
+    }
+
+
+        //if
+
+        let compraRealizada = false;
+
+            if(compraRealizada === true){
+                let subsidioJuguete = 10;
+                console.log(subsidioJuguete)
+            }
+            else { let subsidioJuguete = 5;
+            console.log(subsidioJuguete);}
+
+        //Else if
+
+        let carro = "Mazda";
+
+        function cualEsMiCarro (){
+        if ("Mazda"===carro) {
+            console.log(`Mi carro es un ${carro}.`);
+        }         
+        else if("Toyota"===carro) {
+            console.log(`Mi carro es un ${carro}.`);
+        }
+        else{console.log(`Mi carro no es un ${carro}.`);
+        }
+        }           
+
+
+        //switch
+
+        let meDog ="Bulldog";
+
+        function cualEsMiPerro() {
+        switch (meDog) {
+            case "Pincher":
+                console.log(`Mi perro es de raza ${meDog}`);
+                break;
+            case "Pitbull":
+                console.log(`Mi perro es de raza ${meDog}`);      
+            case "Bulldog":
+                console.log(`Mi perro es de raza ${meDog}`); 
+                break;
+            default:
+                console.log(`No tengo un perro :(`);    
+                break;
+        }
+    }
+        //Operador Ternario
+        let prueba =(true) ? `Es verdadera la prueba` : `Es falsa la respuesta pero verdadera la prueba`;
+        console.log(prueba)
+        VM665:1 Es verdadera la prueba
+        
+        let prueba =(false) ? `Es verdadera la prueba` : `Es falsa la respuesta pero verdadera la prueba`;
+        console.log(prueba)
+        VM751:1 Es falsa la respuesta pero verdadera la prueba
+
