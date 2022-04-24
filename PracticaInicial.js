@@ -72,12 +72,106 @@ console.log(quienEres('William', 'Correa', 'Unic'));
     //¿Puedo combinar funciones y condicionales?
 
     let condicional = "Es una función que valida una condición y ejecuta codigo"
-    let tiposCondicionalesJSDiferencias = {
+    let tiposCondicionalesJSDiferencias = 
         "if.else: Validauna condición y ejecuta un codigo, sino se cumple ejecuta el else",
         "Else if: funciona como if.else adicionando más condiciones para validra entre ambos condicionales", 
         "swithc: En casos en donde haya una extensión más larga de casos por  revisar es más eficiente utilziar estacondicional",
-        "Operador ternario: validamos una variables si es verdadera o falsa y nos devuelve una primera opción verdadero o la segunda si es falsa"
+        "Operador ternario: validamos una variables si es verdadera o falsa y nos devuelve una primera opción verdadero o la segunda si es falsa";
+    
+    let puedoCombinarFuncionesYCondicioneles="Si es posible se pude combinar una condicional dentro de una función"
+
     }
+
+    // Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if:
+
+    const tipoDeSuscripcion = "Basic";
+
+    switch (tipoDeSuscripcion) {
+       case "Free":
+           console.log("Solo puedes tomar los cursos gratis");
+           break;
+       case "Basic":
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+           break;
+       case "Expert":
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+           break;
+       case "ExpertPlus":
+           console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+           break;
+    }
+
+    const tipoDeSuscripcion = "Basic";
+
+    function imprimirTipoDeSuscripcion() {
+        if ("Free"===tipoDeSuscripcion){
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, solo puedes tomar los cursos gratis`)
+        }
+        else if("Basic"===tipoDeSuscripcion){
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, puedes tomar casi todos los cursos de Platzi durante un mes`)
+        }
+        else if("Expert"===tipoDeSuscripcion){
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, puedes tomar casi todos los cursos de Platzi durante un año`)
+        }
+        else{
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año`)
+        }   
+    }
+    >>Tienes una suscripción Expert, puedes tomar casi todos los cursos de Platzi durante un año
+
+    //3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
+    const tipoDeSuscripcion = "Basic";
+
+    if (tipoDeSuscripcion) {
+        if (tipoDeSuscripcion==="Free") {
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, solo puedes tomar los cursos gratis`)
+        }
+        if (tipoDeSuscripcion==="Basic") {
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, puedes tomar casi todos los cursos de Platzi durante un mes`)
+        }
+        if (tipoDeSuscripcion==="Exper") {
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, puedes tomar casi todos los cursos de Platzi durante un año`)
+        }
+        if (tipoDeSuscripcion==="ExpertPlus") {
+            console.log(`Tienes una suscripción ${tipoDeSuscripcion}, tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año`)
+        }
+    }
+
+    //Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays y un solo condicional. 😏
+
+    var tiposDeSuscripcion =[
+        {tipo: "Free", leyenda:"Tienes una suscripción Free, solo puedes tomar los cursos gratis"},
+        {tipo: "Basic", leyenda:"Tienes una suscripción Basic, puedes tomar casi todos los cursos de Platzi durante un mes"},
+        {tipo: "Exper", leyenda:"Tienes una suscripción Exper, puedes tomar casi todos los cursos de Platzi durante un año"},
+        {tipo: "ExpertPlus", leyenda:"Tienes una suscripción ExpertPlus, tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"}
+    ];
+    
+var encuentraTipoDeSuscripion = tiposDeSuscripcion.find(
+    function(suscripcion){
+        return suscripcion.tipo ==="Free"
+    }
+);
+
+
+var articulos =[
+    {nombre: "Bici", costo: 3000 }, 
+    {nombre: "Tv", costo: 2500 },
+    {nombre: "Libro", costo: 322 },
+    {nombre: "Celular", costo: 10000 },
+    {nombre: "Laptop", costo: 20000 },
+    {nombre: "Teclado", costo: 500 },
+    {nombre: "Audifonos", costo: 1700 },
+];
+
+var encuentraArticulo = articulos.find(
+    function(articulo){
+        return articulo.nombre ==="Laptop"
+    }
+);
+
+
+
+
 
 
         //if
@@ -127,6 +221,9 @@ console.log(quienEres('William', 'Correa', 'Unic'));
         }
     }
         //Operador Ternario
+
+        Sintaxis
+        condition ? exprIfTrue : exprIfFalse
         let prueba =(true) ? `Es verdadera la prueba` : `Es falsa la respuesta pero verdadera la prueba`;
         console.log(prueba)
         VM665:1 Es verdadera la prueba
@@ -134,4 +231,26 @@ console.log(quienEres('William', 'Correa', 'Unic'));
         let prueba =(false) ? `Es verdadera la prueba` : `Es falsa la respuesta pero verdadera la prueba`;
         console.log(prueba)
         VM751:1 Es falsa la respuesta pero verdadera la prueba
+   
+        let a= true
+        function exeTernario(a) {
+            return(a ? '1true' : '1false');
+        } 
 
+        console.log(exeTernario(true))
+        >> 1true
+        console.log(exeTernario(true))
+        >>2false
+        console.log(exeTernario(null))
+        >>1 1false
+
+        let age = 26
+        let ageTrue =(age <= 25) ? 'Still young' : 'Time to change';
+        console.log(ageTrue);
+        Time to change
+
+        let age = 22
+        let ageTrue =(age <= 25) ? 'Still young' : 'Time to change';
+        console.log(ageTrue);
+        Still young
+        z
