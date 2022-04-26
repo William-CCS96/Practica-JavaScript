@@ -139,41 +139,174 @@ console.log(quienEres('William', 'Correa', 'Unic'));
 
     //Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays y un solo condicional. 😏
 
-    var tiposDeSuscripcion =[
-        {tipo: "Free", leyenda:"Tienes una suscripción Free, solo puedes tomar los cursos gratis"},
-        {tipo: "Basic", leyenda:"Tienes una suscripción Basic, puedes tomar casi todos los cursos de Platzi durante un mes"},
-        {tipo: "Exper", leyenda:"Tienes una suscripción Exper, puedes tomar casi todos los cursos de Platzi durante un año"},
-        {tipo: "ExpertPlus", leyenda:"Tienes una suscripción ExpertPlus, tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"}
-    ];
-    
-var encuentraTipoDeSuscripion = tiposDeSuscripcion.find(
-    function(suscripcion){
-        return suscripcion.tipo ==="Free"
-    }
-);
+        const tipoDeSuscripcion = "Free";
+
+        const Suscripciones= ["Free","Basic","Expert","Expert+"];
+        const Respuestas=["Solo puedes tomar los cursos gratis",
+                        "Puedes tomar casi todos los cursos de Platzi durante un mes",
+                        "Puedes tomar casi todos los cursos de Platzi durante un año",
+                        "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"];
+
+        index=Suscripciones.indexOf(tipoDeSuscripcion);
+        if (index==-1){
+            console.error("No exisite este plan u.u");
+        }
+        else{
+            console.log(Respuestas[index]);
+        }
+
+        
+        const tipoDeSuscripcion = "Free";
+        const Respuestas = {
+            "Free": "Solo puedes tomar los cursos gratis",
+            "Basic": "Puedes tomar casi todos los cursos de Platzi durante un mes",
+            "Expert": "Puedes tomar casi todos los cursos de Platzi durante un año",
+            "Expert+": "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"};
+
+        console.log(Respuestas[tipoDeSuscripcion])
+
+        //Ciclos   1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+
+        let ciclo= "Es una función que nos permite hacer una tarea en constante ciclo hasta que se cumpla una condicion o el total devariables";
+        let tiposDeCiclosJS = {
+            "for", "for of", "while", "do while"},
+        let cicloInfinito = "La tarea realizada por el ciclo continua indefinidamente sin pasar a la siguiente tarea";
+        let mezclarCiclosYCondicionales ="Si es posible";
+
+       //Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:
+        for (let i = 0; i < 5; i++) {
+        console.log("El valor de i es: " + i);
+        }
 
 
-var articulos =[
-    {nombre: "Bici", costo: 3000 }, 
-    {nombre: "Tv", costo: 2500 },
-    {nombre: "Libro", costo: 322 },
-    {nombre: "Celular", costo: 10000 },
-    {nombre: "Laptop", costo: 20000 },
-    {nombre: "Teclado", costo: 500 },
-    {nombre: "Audifonos", costo: 1700 },
-];
+        let i=0
+        
+        while(i>=0 && i<5){
+            i++;
+            console.log("El valor de i es: " + i);
+        }
 
-var encuentraArticulo = articulos.find(
-    function(articulo){
-        return articulo.nombre ==="Laptop"
-    }
-);
+        
+        for (let i = 10; i >= 2; i--) {
+            console.log("El valor de i es: " + i);
+            }
+
+        let i=10
+        while(i<=10 && i>=2){
+            console.log("El valor de i es: "+i);
+            i--;
+        }
+
+        //Escribe un código en JavaScript que le pregunte a los usuarios cuánto es 2 + 2. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
+        //Pista: puedes usar la función prompt de JavaScript.
+
+        let person = prompt("Please enter your name", "Harry Potter");
+
+        if (person != null) {
+        console.log("Hello " + person + "! How are you today?");
+        }
+        VM458:4 Hello William Correa! How are you today?;
+
+        let resultado= prompt("¿Cuanto es 2 + 2", "Respuesta");
+        if (resultado == 4){
+            console.log("Felicitaciones, respuesta correcta");
+        }
+        else {
+            console.log("Volvamos a empezar");
+            prompt("¿Cuanto es 2 + 2", "Perdiste");
+        }
+
+
+        
+        function juego() {
+            let resultado;
+            do {
+              resultado = parseInt(prompt('¿Cuál es el resultado de "2 + 2". R: '));
+            } while ( resultado !== 4 );
+            if (resultado === 4);
+            return console.log('¡Eres un GENIO!');
+          }
+          juego();
+
+
+          //LISTAS
+          let array = "Es un onjeto que almacena datos en forma de lista y que funciona apra hacer operaciones de recorridos";
+          let objeto= "En un valor que se asocia con una propiedad y una palabra clave"
+          let cuandoEsMejorUsarObjetosOArrays = "Un objeto cuando se desea acceder a una propiedad de algun valor en especifico y un array cuando deseamos acceder a un obejto en especifico"
+          let sePuedenMezclar = "Si se pueden combinar"
+
+            //  2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+
+            var articulos =[
+                {nombre: "Bici", costo: 3000 }, 
+                {nombre: "Tv", costo: 2500 },
+                {nombre: "Libro", costo: 322 },
+                {nombre: "Celular", costo: 10000 },
+                {nombre: "Laptop", costo: 20000 },
+                {nombre: "Teclado", costo: 500 },
+                {nombre: "Audifonos", costo: 1700 },
+            ];
+
+            function primerElemento(array) {
+                console.log(array[0])
+            }
+
+            // Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
+
+            var articulos =[
+                {nombre: "Bici", costo: 3000 }, 
+                {nombre: "Tv", costo: 2500 },
+                {nombre: "Libro", costo: 322 },
+                {nombre: "Celular", costo: 10000 },
+                {nombre: "Laptop", costo: 20000 },
+                {nombre: "Teclado", costo: 500 },
+                {nombre: "Audifonos", costo: 1700 },
+            ];
+
+            function imprimirElementos (array){
+                for(var i = 0; i<array.length; i++){
+                    console.log(array[i]);
+                }
+            }
+
+            // Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
+
+            var myCar = {
+                make: 'Ford',
+                model: 'Mustang',
+                year: 1969
+            }
+
+            for (const property in myCar) {
+                console.log(`The property ${property} is equal to ${myCar[property]}.`);
+                }
+
+            
+
+
+            
+            
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Apuntes
+        
         //if
 
         let compraRealizada = false;
