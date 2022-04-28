@@ -172,7 +172,7 @@ function calcularAlturaTrianguloIsosceles()
 
 
 
-//Aquí agrupamos con HTML Cículo
+//Aquí agrupamos con HTML Círculo
 
     function calcularCircunferenciaCirculo() {
         const input = document.getElementById("InputCirculo");
